@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	{% extends 'm_base.html' %}
+	{% load static %}
+    {% block new %}	
+
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        .dates{
+          background-color: rgb(158, 158, 158);
+          color: white;
+          padding: 12px 2px;
+          border-color:none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: left;
+        }
+
+        .view{
+          background-color: rgb(158, 158, 158);
+          color: white;
+          padding: 6px 3px;
+          border-color:none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: left;
+        }
+        
+        .leaveSubmit {
+            float: none !important;
+            margin-left:0%;
+            
+            
+        }
+      
+        input[type=submit] {
+          background-color: rgb(158, 158, 158);
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+        }
+        
+        .container {
+          width:400px;	
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 40px;
+        }
+        
+        .col-25 {
+          float: left;
+          width: 100%;
+          margin-top: 6px;
+        }
+        
+        .col-75 {
+          float: left;
+          width: 100%;
+          margin-top: 6px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+</style>
+        <form action="{% url 'Att_approve:Att_approve1' %}" method='POST'> {% csrf_token %}
+            <select class='dates' name="status" id="DropDown">
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+            </select>
+            <input class="leaveSubmit" id="Submit1" name="Submit1" type="submit" value="Submit"/>
+        </form>
+        <form action='Att_button/' method='POST'> {% csrf_token %}	
+        <table width="100%" bordercolor="#ffffff" cellspacing="2" cellpadding="2" border="1">
+            <tbody>
+                <td style="BORDER-LEFT-COLOR: #cfe3f9; BORDER-BOTTOM-COLOR: #cfe3f9; COLOR: white; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #cfe3f9; FONT-FAMILY: Arial; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; HEIGHT: 35px; BACKGROUND-COLOR: rgb(49, 49, 49); BORDER-RIGHT-COLOR: #cfe3f9; BORDER-BOTTOM-STYLE: solid" align="center" colspan="7"><b>Attendance Adjustment Request</b>
+                </td>
+                <tr valign="top" style="color:White;background-color:rgb(49, 49, 49);font-family:Arial;font-size:12pt;font-weight:bold;width:40%">
+                    <th width="20%"><font style='color:white;margin-left:40%'>Name</font></th>
+                    <th width="40%"><font style='color:white;margin-left:40%'>Date</font></th>
+                    
+                </tr>
+                {% for i in data %}
+                <tr valign="top" style="color:#000066;background-color:#EDF5F9;font-family:Arial;font-size:10pt;" id="rm_{{i.0}}">
+                    <td align="center">{{i.1}}
+                    <input type="hidden" value="{{i.0}}" id="{{i.0}}" name="sno"></td>
+
+
+
+                        
+                    <td align="center">{{i.2}}</td>
+                    <td><button class="view" name="Submit1" type="submit" value="{{i.0}}">View</button>
+                                                                </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>	
+    </form>	
+							
+
+{% endblock %}</html>
+

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	{% extends 'm_base.html' %}
+	{% load static %}
+
+	{% block new %}
+
+
+	<style>
+        * {
+          box-sizing: border-box;
+        }
+        .dates{
+          background-color: rgb(158, 158, 158);
+          color: white;
+          padding: 11px 2px;
+          border-color:none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-left:left;
+        }
+		.view{
+          background-color: rgb(158, 158, 158);
+          color: white;
+          padding: 10px 3px;
+          border-color:none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-left:-35%;
+        }
+        
+        .leaveSubmit {
+            float: none !important;
+            margin-left:0%;
+            
+            
+        }
+      
+        input[type=submit] {
+          background-color: rgb(158, 158, 158);
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          float: right;
+        }
+        
+        .container {
+          width:400px;	
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 40px;
+        }
+        
+        .col-25 {
+          float: left;
+          width: 100%;
+          margin-top: 6px;
+        }
+        
+        .col-75 {
+          float: left;
+          width: 100%;
+          margin-top: 6px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+</style>
+
+	<form action="{% url 'att_adjust_final_approve' %}" method='POST'> {% csrf_token %}
+	<table width="100%" bordercolor="#ffffff" cellspacing="2" cellpadding="2" border="1">
+		<tbody>
+			<td style="BORDER-LEFT-COLOR: #cfe3f9; BORDER-BOTTOM-COLOR: #cfe3f9; COLOR: white; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #cfe3f9; FONT-FAMILY: Arial; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; HEIGHT: 33px; BACKGROUND-COLOR: rgb(49,49,49); BORDER-RIGHT-COLOR: #cfe3f9; BORDER-BOTTOM-STYLE: solid" align="center" colspan="10" height="1" class="maintext2"><b>Attendance Adjustment Description</b>
+			</td>
+			<tr valign="top" style="color:White;background-color:#006699;font-family:Arial;font-size:10pt;font-weight:bold;">
+
+			</tr>
+			<tr>
+
+			</tr>
+			{% for i in data %}
+			<tr valign="top" style="color:#000066;background-color:#EDF5F9;font-family:Arial;font-size:12pt;">
+				<input type='hidden' name='abc' value='{{i.0}}'/> 
+				<td align="center">{{i.1}}</td>
+				<td align="center">{{i.2}}</td><br>
+				<td align="center">{{i.3}}</th>
+				
+				
+			{% endfor %}	
+		</tbody>
+		
+	</table>
+	<table width="100%" bordercolor="#ffffff" cellspacing="2" cellpadding="2" border="1">
+		
+		<TR>{% if data.0.4 == None %}
+						<TD style="WIDTH: 74px" align="left" bgColor="#ffffff">
+							<P><SPAN style="COLOR: blue"><SPAN style="FONT-SIZE: 12pt; COLOR: #3366ff; FONT-FAMILY: 'Times New Roman'; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"><FONT style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" face="Arial" size="2"><SPAN style="FONT-SIZE: 10pt; COLOR: #191984; FONT-FAMILY: Arial; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">&nbsp; 
+												Reason:</SPAN></FONT></SPAN></SPAN></P>
+							<P><SPAN style="COLOR: blue"><SPAN style="FONT-SIZE: 12pt; COLOR: #3366ff; FONT-FAMILY: 'Times New Roman'; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"><FONT style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" face="Arial" size="2"><SPAN style="FONT-SIZE: 10pt; COLOR: #191984; FONT-FAMILY: Arial; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"></SPAN></FONT></SPAN></SPAN>&nbsp;</P>
+							<P><SPAN style="COLOR: blue"><SPAN style="FONT-SIZE: 12pt; COLOR: #3366ff; FONT-FAMILY: 'Times New Roman'; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"><FONT style="FONT-SIZE: 10pt; FONT-FAMILY: Arial" face="Arial" size="2"><SPAN style="FONT-SIZE: 10pt; COLOR: #191984; FONT-FAMILY: Arial; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"></SPAN></FONT></SPAN></SPAN>&nbsp;</P>
+							<P><B><SPAN style="COLOR: blue"><SPAN style="FONT-SIZE: 12pt; COLOR: #3366ff; FONT-FAMILY: 'Times New Roman'; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"><FONT face="Arial" size="2"></FONT></SPAN></SPAN></B>&nbsp;</P>
+							<P><B><SPAN style="COLOR: blue"><SPAN style="FONT-SIZE: 12pt; COLOR: #3366ff; FONT-FAMILY: 'Times New Roman'; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA"><FONT face="Arial" size="2"></FONT></SPAN></SPAN></B>&nbsp;</P>
+						</TD>
+						
+						
+						<TD borderColor="#ccffff" bgColor="#ffffff" align="left">
+							<textarea name="TextBox" id="TextBox2" class="style.css" style="font-family:Arial;font-size:Smaller;height:148px;width:430px;">{{i.3}}
+							</textarea></TD>
+						{% endif %}
+			
+					</TR>
+					<tr>
+					<td height="15" valign="top" align="center" colspan="2">
+						<select class='view' name="status" id="DropDown" >
+							<option value="approved">Approve</option>
+							<option value="rejected">Rejecte</option>
+						</select>
+						
+						<input class="leaveSubmit" name="Submit1" type="submit" value="Submit"/>
+					</td>
+				</tr>
+	</table>
+	</form>	
+		
+
+								
+
+{% endblock %}</html>
+

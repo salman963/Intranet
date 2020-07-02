@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+{% block content1 %}
+<table>
+    <tr>
+         <td><p style="color:rgb(6, 166, 240);">Name</p></td>
+        <td><p style="color:rgb(6, 166, 240);">Total_Leaves</p></td>
+    </tr>
+    {% for key, values in dict1.items %}
+    <tr>
+        <td>{{key}}</td>
+        <td>{{values}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	{% load static %}
+	<head>
+<meta charset="utf-8">
+<title>Neuronimbus Intranet</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body ms_positioning="GridLayout" topmargin="0" leftmargin="0" bgcolor="#ffffff">
+		
+
+
+			<table id="Table1" width="778" cellspacing="0" cellpadding="0" border="0" align="left">
+				<tbody><tr>
+					<td valign="top" height="80">
+						<table id="Table2" width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr valign="top">
+								<td width="82"><img src="{% static 'images/img_01.gif' %}" width="82" height="80"></td>
+								<td width="188"><img src="{% static 'images/img_02.gif' %}" width="188" height="80"></td>
+								<td width="225"><img src="{% static 'images/img_03.gif' %}" width="225" height="80"></td>
+								<td><img src="{% static 'images/img_04.gif' %}" width="283" height="80"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" height="12" align="right">
+						<table id="Table3" width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr valign="top">
+								<td class="hght12" width="22" bgcolor="#1964af"><img src="{% static 'images/img_05.gif' %}" width="22" height="12"></td>
+								<td class="hght12" bgcolor="#ffffff"><img src="{% static 'images/img_06.gif' %}" width="1" height="12"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" height="25">
+						<table id="Table4" width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr valign="top">
+								<td width="22"><img src="{% static 'images/img_08.gif' %}" width="22" height="25"></td>
+								<td width="165"><img src="{% static 'images/img_09.gif' %}" width="165" height="25"></td>
+								<td width="240"><img src="{% static 'images/img_10.gif' %}" width="240" height="25"></td>
+								<td background="{% static 'images/img_11.gif' %}"><img src="{% static 'images/img_11.gif' %}" width="1" height="25"></td>
+								<td width="30"><img src="{% static 'images/img_12.gif' %}" width="30" height="25"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr bgcolor="#d5ebf8">
+					<td width="100%" valign="top">
+						<table width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr valign="top">
+								<td width="22"><img src="{% static 'images/img_13.gif' %}"" width="22"></td>
+								<td style="BACKGROUND-IMAGE:" width="165"><img src="{% static 'images/img_14.gif' %}" width="165"></td>
+								<td valign="top" bgcolor="#ffffff" align="center">
+									<table id="Table6" width="100%" cellspacing="0" cellpadding="0" border="0">
+										<tbody><tr valign="top">
+											<td class="months" valign="top" align="left"><span id="Welcome1_Label1" style="color:#FF8000;font-family:Arial;font-size:9pt;font-weight:bold;">&nbsp;Welcome&nbsp;</span><span id="Welcome1_welcom" style="color:DimGray;font-family:Arial;font-size:9pt;font-weight:bold;">{% block name %}{% endblock %}</span></td>
+											<td class="attendance" valign="top" align="right"><span id="Date11_date_" style="color:#191984;font-family:Arial;font-size:9pt;font-weight:bold;width:80px;">{% block date %}{% endblock %}</span></td>
+										</tr>
+									</tbody></table>
+								</td>
+								<td width="30" bgcolor="#ffffff"><img src="{% static 'images/img_16.gif' %}"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" height="11">
+						<table id="Table7" width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr valign="top">
+								<td width="22"><img src="{% static 'images/img_17.gif' %}" width="22" height="11"></td>
+								<td background="{% static 'images/img_18.gif' %}" width="165"><img src="{% static 'images/img_18.gif' %}" width="165" height="11"></td>
+								<td background="{% static 'images/img_19.gif' %}"><img src="{% static 'images/img_19.gif' %}" width="1" height="11"></td>
+								<td width="30" bgcolor="#ffffff"><img src="{% static 'images/img_20.gif' %}"width="30" height="11"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" height="251">
+						<table id="Table8" width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr valign="top">
+								<td width="22" bgcolor="#c3e6f9">&nbsp;</td>
+								<td width="165" background="{% static 'images/img_31.gif' %}">
+									<table id="Table9" width="100%" cellspacing="0" cellpadding="0" border="0">
+										<tbody><tr>
+											<td valign="top" height="18">
+<p>
+	<table id="Table3" style="WIDTH: 88px; HEIGHT: 152px" width="88" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr>
+			<td style="HEIGHT: 7px">
+				<a href="{% url 'home' %}"><img src="{% static 'images/homebtn.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		
+		<tr>
+			<td style="HEIGHT: 7px"><a href="{% url 'profile1:profile' %}"><img src="{% static 'images/viewbtn.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		<tr>
+			<!-- <td style="HEIGHT: 7px"><a href="javascript:void(0);"><img src="{% static 'images/surveybtn.gif' %}" alt=""></a>
+			</td> -->
+		</tr>
+		<tr>
+			<!-- <td><a href="javascript:void(0);"><img src="{% static 'images/mailtoadminbtn.gif' %}" alt=""></a>				
+			</td> -->
+		</tr>
+		<tr>
+			<td><a href="{% url 'leave:leave2' %}"><img src="{% static 'images/applyforleavebtn.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		<tr>
+			<!-- <td><a href="javascript:void(0);"><img src="{% static 'images/markattendance.gif' %}" alt=""></a>
+			</td> -->
+		</tr>
+		<tr>
+			<td><a href="{% url 'Attendance:Att' %}"><img src="{% static 'images/modify-atteance.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		<tr>
+			<td><a href="{% url 'holiday_list' %}"><img src="{% static 'images/holidaysbtn.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		<tr>
+			<td><a href="{% url 'change_password:change_pass' %}"><img src="{% static 'images/changepasswordbtn.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		<tr>
+			<!-- <td><a href="javascript:void(0);"><img src="{% static 'images/prjctstructurebtn.gif' %}" alt=""></a>
+			</td> -->
+		</tr>
+		<tr>
+			<td><a href="{% static 'HR_Policy.pdf' %}"><img src="{% static 'images/hrpolicy.gif' %}" alt=""></a>				
+			</td>
+		</tr>
+		<tr>
+			<!-- <td><a href="javascript:void(0);"><img src="{% static 'images/feedback.gif' %}" alt=""></a>
+			</td> -->
+		</tr>
+		<tr>
+			<td>
+				<a href="{% static 'Recruitment Process.pdf' %}"><img src="{% static 'images/recruitment.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		<tr>
+			<!-- <td><a href="javascript:void(0);"><img src="{% static 'images/CommonGUIStandards.gif' %}" alt=""></a>
+			</td> -->
+		</tr>
+		<tr>
+			<td><a href="{% url 'logout' %}"><img src="{% static 'images/logoutbtn.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="{% static 'images/img_30.gif' %}" alt="">
+			</td>
+		</tr>
+	</tbody></table>
+</p>
+</td>
+										</tr>
+										
+									</tbody></table>
+								</td>
+								<td bgcolor="#ffffff">
+								{% block new %}	
+									
+								{% endblock %}
+
+								</td>
+								<td width="14" background="{% static 'images/img_24.gif' %}">&nbsp;</td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top" height="37">
+						<table id="Table12" width="100%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr valign="top">
+								<td width="82"><img src="{% static 'images/img_32.gif' %}" width="82" height="37"></td>
+								<td width="105"><img src="{% static 'images/img_33.gif' %}" width="105" height="37"></td>
+								<td background="{% static 'images/img_34.gif' %}">&nbsp;</td>
+								<td width="30"><img src="{% static 'images/img_35.gif' %}" width="30" height="37"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+			</tbody></table>
+</body></html>
+

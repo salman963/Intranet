@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	{% extends temp %}
+	{% load static %}
+
+	{% block new %}
+	<style>
+		/* Style all input fields */
+		.text{
+		margin-left: 18%;
+		padding:4px;
+	
+		}
+	
+		.custom{
+			margin-left: 88px;
+		}
+	
+		input {
+		  width: 30%;
+		  padding: 8px;
+		  border: 1px solid #ccc;
+		  border-radius: 4px;
+		  box-sizing: border-box;
+		  margin-top: 10px;
+		  margin-left: 20px;
+		  margin-bottom: 16px;
+		}
+		
+		/* Style the submit button */
+		.button{
+		  background-color: #4CAF50;
+		  color: white;
+		  margin-left: 270px;
+		}
+		
+		/* Style the container for inputs */
+		.container {
+		  background-color: #f1f1f1;
+		  padding: 20px;
+		}
+		
+		/* The message box is shown when the user clicks on the password field */
+		#message {
+		  display:none;
+		  background: #f1f1f1;
+		  color: #000;
+		  position: relative;
+		  padding: 20px;
+		  margin-top: 10px;
+		}
+		
+		#message p {
+		  padding: 10px 35px;
+		  font-size: 18px;
+		}
+		
+		/* Add a green text color and a checkmark when the requirements are right */
+		.valid {
+		  color: green;
+		}
+		
+		.valid:before {
+		  position: relative;
+		  left: -35px;
+		  content: "✔";
+		}
+		
+		/* Add a red text color and an "x" when the requirements are wrong */
+		.invalid {
+		  color: red;
+		}
+		
+		.invalid:before {
+		  position: relative;
+		  left: -35px;
+		  content: "✖";
+		}
+		</style>						<td bgcolor="#ffffff">
+									
+								<table width="100%" bordercolor="#ffffff" cellspacing="2" cellpadding="2" border="1">
+									<tbody>
+										<td style="BORDER-LEFT-COLOR: #cfe3f9; BORDER-BOTTOM-COLOR: #cfe3f9; COLOR: white; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #cfe3f9; FONT-FAMILY: Arial;font-size: 20px; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; HEIGHT: 3px; BACKGROUND-COLOR: #1b1d1f; BORDER-RIGHT-COLOR: #cfe3f9; BORDER-BOTTOM-STYLE: solid" align="center" colspan="7" height="3"><b>List of Holidays</b>
+										</td>
+										<tr valign="top" style="color:rgb(216, 209, 209);background-color:#ecf6fc;font-family:Arial;font-size:13pt;font-weight:bold;margin-top:20px;">
+											<th width="20%" style='margin-left:20px'>Day</th>
+											<th width="30%">Date Of Holiday</th>
+											<th width="50%">Description Of Holiday</th>
+										</tr>
+										{% for i in hdata %}
+										<tr valign="top" style="color:#000066;background-color:#EDF5F9;font-family:Arial;font-size:12pt;">
+											<td>{{i.0}}</td>
+											<td>{{i.1}}</td>
+											<td>{{i.2}}</th>
+										</tr>
+										{% endfor %}
+									</tbody>
+								</table>
+								</td>
+
+{% endblock %}</html>
+

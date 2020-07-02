@@ -1,0 +1,64 @@
+{% extends "admin/base.html" %}
+{% block content_title %}
+{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>	
+
+  <script>
+    $(document).ready(function(){
+      $('#Button1').click(function(){
+        var month=$('#month').val();
+        var year=$('#year').val();
+        var d = new Date();
+        if (month=='Month'|| year=='Year'){
+          $('#error').text('Please Enter Month and Year')
+        }
+        else if(year<=d.getFullYear()){
+          if(month<=d.getMonth()){
+            $('#submit').submit();
+          }
+          else{
+            $('#error').text('Please Enter Month or Year')
+          }
+        }
+        else{
+          $('#error').text('Please Enter Month or Year');
+        }		
+  
+      })
+    });
+  
+      </script>    
+<form action="{% url 'custom' %}" method="POST" id='submit'>{% csrf_token %}
+<select name="month" id="month" style="font-family:Arial;font-size:10pt;width:80px;">
+  <option value="Month">Month</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  
+  </select>
+            <select name="year" id="year" style="font-family:Arial;font-size:10pt;width:80px;">
+  <option value="Year">Year</option>
+  <option value="2022">2022</option>
+  <option value="2021">2021</option>
+  <option value="2020">2020</option>
+  
+  </select>
+  <input type="button" name="send" value="Send" id="Button1"/>
+  <br>
+  <div id='error'></div>
+  </form>
+  
+{% endblock %}

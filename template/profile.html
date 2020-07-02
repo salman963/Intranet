@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	
+	{% extends temp %}
+	{% load static %}
+
+	{% block new %}
+	<table id="Table10" align="center" width="570" background="#ffffff" class="table" cellpadding="1" style="WIDTH: 945px; HEIGHT: 359px" cellspacing="2" bordercolor="#ffffff" border="0">
+		<tbody><tr valign="top">
+			<td style="BORDER-LEFT-COLOR: #cfe3f9; BORDER-BOTTOM-COLOR: #cfe3f9; COLOR: white; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #cfe3f9; FONT-FAMILY: Arial; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; HEIGHT: 1px; BACKGROUND-COLOR: rgb(49, 49, 49); BORDER-RIGHT-COLOR: #cfe3f9; BORDER-BOTTOM-STYLE: solid" align="center" colspan="7" height="1" class="maintext2"><b>User Profile</b>
+												</td>
+		</tr>
+		<tr>
+			<td style="HEIGHT: 7px" bgcolor="#ffffff" colspan="7" height="7"><font color="#191984"></font></td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 290px" bgcolor="#edf5f9">
+													<p class="MsoNormal"><span style="COLOR: #003366">
+															<o:p>
+																<span style="COLOR: #003366">
+																	<o:p>
+																		<span style="COLOR: #003366"><font face="Arial" size="2" color="#191984">&nbsp;User 
+																				Name</font></span></o:p></span></o:p></span></p>
+												</td>
+			<td bgcolor="#edf5f9">
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label1" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.0}}</span><font face="Arial" size="2" color="#edf5f9">&nbsp; 
+															' </font>
+													</p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px">
+													<p><font face="Arial"><font size="2"><font color="#191984">&nbsp;<span style="COLOR: #003366">First 
+																		Name</span></font></font></font></p>
+												</td>
+			<td>
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label2" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.1}}</span><font face="Arial" size="2" color="#191984">&nbsp;
+														</font>
+													</p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px" bgcolor="#edf5f9">
+													<p><font color="#191984" face="Arial" size="2"><span style="FONT-SIZE: 12pt; COLOR: #003366; FONT-FAMILY: 'Times New Roman'; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">&nbsp;Last 
+																Name</span></font></p>
+												</td>
+			<td bgcolor="#edf5f9">
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label3" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.2}}</span><font face="Arial" size="2" color="#191984">&nbsp;
+														</font>
+													</p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px" height="22">
+													<p><span style="COLOR: #003366">
+															<o:p>
+																<font face="Arial"><font size="2"><font color="#191984">&nbsp;<span style="COLOR: #003366">Date 
+																				of Birth</span></font></font></font></o:p></span></p>
+												</td>
+			<td>
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label4" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.3}}</span><font face="Arial" size="2" color="#191984">&nbsp;&nbsp;&nbsp;</font></p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px" bgcolor="#edf5f9">
+													<p><font face="Arial"><font size="2" color="#191984">&nbsp;Gender</font></font></p>
+												</td>
+			<td bgcolor="#edf5f9">
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label5" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.4}}</span><font face="Arial" size="2" color="#191984">&nbsp;
+														</font>
+													</p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px">
+													<p><font face="Arial"><font size="2"><font color="#191984">&nbsp;<span style="COLOR: #003366">Designation</span></font></font></font></p>
+												</td>
+			<td>
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label6" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.5}}</span><font face="Arial" size="2" color="#191984">&nbsp;&nbsp;&nbsp;</font></p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px" bgcolor="#edf5f9">
+													<p><span style="COLOR: #003366">
+															<o:p>
+																<font face="Arial" size="2" color="#191984">&nbsp;Date Of joining</font></o:p></span></p>
+												</td>
+			<td bgcolor="#edf5f9">
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label7" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.6}}</span><font face="Arial" size="2" color="#191984">
+														</font>
+													</p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px">
+													<p><font face="Arial"><font size="2"><font color="#191984">&nbsp;<span style="COLOR: #003366">Contact 
+																		number</span></font></font></font></p>
+												</td>
+			<td>
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label8" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.7}}</span><font face="Arial" size="2" color="#191984">&nbsp;
+														</font>
+													</p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px" bgcolor="#edf5f9">
+													<p><font face="Arial"><font size="2"><font color="#191984">&nbsp;<span style="COLOR: #003366">Mobile 
+																		Number</span></font></font></font></p>
+												</td>
+			<td bgcolor="#edf5f9">
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label9" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.8}}</span><font face="Arial" size="2" color="#191984">&nbsp;
+														</font>
+													</p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px">
+													<p><font face="Arial"><font size="2"><font color="#191984">&nbsp;<span style="COLOR: #003366">Salary</span></font></font></font></p>
+												</td>
+			<td>
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label10" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">N/A</span><font face="Arial" size="2" color="#191984">&nbsp;
+														</font>
+													</p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px" bgcolor="#edf5f9">
+													<p><font face="Arial"><font size="2" color="#191984">&nbsp;Leaves Allocated</font></font></p>
+												</td>
+			<td bgcolor="#edf5f9">
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label11" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.9}}</span></p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px">
+													<p><font face="Arial"><font size="2"><font color="#191984">&nbsp;<span style="COLOR: #003366">Residential 
+																		Address</span></font></font></font></p>
+												</td>
+			<td>
+													<p><font face="Arial" size="2" color="#191984">&nbsp; </font>
+														<span id="Label12" style="color:#000040;font-family:Arial;font-size:10pt;height:17px;width:160px;">{{data.10}}</span><font face="Arial" size="2" color="#191984">&nbsp;
+														</font>
+													</p>
+												</td>
+		</tr>
+		<tr valign="top">
+			<td style="WIDTH: 136px" bgcolor="#edf5f9">
+													<p><font face="Arial"><font size="2"><font color="#191984">&nbsp;E<span style="COLOR: #003366">-Mail</span><span style="COLOR: #003366">
+																		Address</span></font></font></font></p>
+												</td>
+			<td bgcolor="#edf5f9">
+													<p>&nbsp;
+														<span id="Label13" style="color:#000040;font-family:Arial;font-size:10pt;width:160px;">{{data.11}}</span>&nbsp;&nbsp;</p>
+												</td>
+		</tr>
+	</tbody></table>			
+								
+	
+
+	{% endblock %}</html>
+

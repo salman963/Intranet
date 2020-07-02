@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	{% extends temp %}
+	{% load static %}
+
+	{% block new %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+<script >
+    $(document).ready(function(){
+        $('#Button1').click(function(){
+            var date1=$('#date').val();
+            var month1=$('#month').val();
+            var year1=$('#year').val();
+			var reason=$('#reason').val();
+			var text=$('#TextBox2').val();
+			
+			
+			if(year1<={{date.year}} && month1 == {{date.month}}){
+				if(date1 <= {{date.day}}){
+					if(reason!='reason' || text != ''){
+						$("#testForm").submit();
+						}
+					else{
+						$('#from_d_error').text('Please Drop a Reason');
+						}
+				}		
+
+				else{
+					$('#from_d_error').text('Please enter a valid date')
+				}
+			}
+            else if(year1<={{date.year}} && month1 < {{date.month}}){
+				if(reason!='reason' || text != ''){
+						$("#testForm").submit();
+						}
+					else{
+						$('#from_d_error').text('Please Drop a Reason');
+						}
+			}
+			else{ 		
+				$('#from_d_error').text('Please enter a valid date');
+            }
+
+        })
+    });
+</script>
+
+<style>
+	* {
+	  box-sizing: border-box;
+	}
+	.dates{
+		margin-left: 5%;
+		padding:10px;
+	}
+	
+	.leaveSubmit {
+		float: none !important;
+		margin-left: 45%;
+		/* text-align: center; */
+		
+	}
+	
+	input[type=text], select, textarea {
+	  width: 100%;
+	  padding: 12px;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  resize: vertical;
+	}
+	
+	label {
+	  padding: 12px 12px 12px 0;
+	  display: inline-block;
+	}
+	
+	input[type=submit] {
+	  background-color: #4CAF50;
+	  color: white;
+	  padding: 12px 20px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  float: right;
+	}
+	
+	input[type=submit]:hover {
+	  background-color: #45a049;
+	}
+	
+	.container {
+	  width:400px;	
+	  border-radius: 5px;
+	  background-color: #f2f2f2;
+	  padding: 40px;
+	}
+	
+	.col-25 {
+	  float: left;
+	  width: 100%;
+	  margin-top: 6px;
+	}
+	
+	.col-75 {
+	  float: left;
+	  width: 100%;
+	  margin-top: 6px;
+	}
+	
+	/* Clear floats after the columns */
+	.row:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	
+	/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+	@media screen and (max-width: 600px) {
+	  .col-25, .col-75, input[type=submit] {
+		width: 100%;
+		margin-top: 0;
+	  }
+	}
+	</style>
+	
+	<!-- <h1 width='100%'>Select duration of leaves you want to apply</h1> -->
+	
+	<div class="container-fluid">
+		<h1 width='100%'>Select duration of leaves you want to apply</h1>
+		<form action="{% url 'Adjust_Attendance' %}" method='POST' id='testForm' >{% csrf_token %}
+			<label for="fname">From</label>
+			<select name="from_d" id="date" style="font-family:Arial;font-size:10pt;width:80px;">
+				<option value="Date">Date</option>
+				{% for i in date_month.0 %}
+				<option value="{{i}}">{{i}}</option>
+				{% endfor %}
+				</select>
+		
+				<select name="from_m" id="month" style="font-family:Arial;font-size:10pt;width:80px;">
+				<option value="Month">Month</option>
+				{% for i in date_month.1 %}
+				<option value="{{i}}">{{i}}</option>
+				{% endfor %}
+				</select>
+				
+				<select name="from_y" id="year" style="font-family:Arial;font-size:10pt;width:80px;">
+					<option value="Year">Year</option>
+					{% for i in date_month.2 %}
+					<option value="{{i}}">{{i}}</option>
+					{% endfor %}
+				</select>
+				<select name="Fday" id="DropDownList1" style="font-family:Arial;font-size:10pt;width:100px;">
+					<option value="0">Duration</option>
+					<option value="0.5">Half Day</option>
+					<option value="1">Full Day</option>
+				</select>&nbsp;&nbsp;&nbsp;&nbsp;
+				<select name="category" id="reason" style="font-family:Arial;font-size:10pt;width:100px;">
+					<option value="reason">Reason</option>
+					<option value="work_from_home">Work From Home</option>
+					<option value="miss_punch">Miss Punch</option>
+					<option value="client_visit">Client Visit</option>
+					<option value="other">Other</option>
+				</select>
+	
+					<div class='dates' id='from_d_error'></div>
+
+					<br>
+					
+			  <label for="subject">Reason</label>
+			  <textarea name="TextBox" id="TextBox2" placeholder="Write something.." style="height:200px"></textarea>
+			  <input type="button" name="send" value="Send" id="Button1" class="leaveSubmit" style="background-color:rgb(252, 248, 248);color:black;width:100px;
+			  height:40px;">
+			</form>
+		  </div>
+						
+	
+
+
+
+{% endblock %}</html>
+

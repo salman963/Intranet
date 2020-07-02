@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	{% extends 'm_base.html' %}
+	{% load static %}
+	
+	{% block new %}
+
+		<table>	
+			<TABLE id="Table10" style="WIDTH: 900px; HEIGHT: 4px" borderColor="#ffffff" cellSpacing="2"
+				cellPadding="1" width="566" align="center" border="0">
+				<TR vAlign="top">
+					<TD style="BORDER-LEFT-COLOR: #cfe3f9; BORDER-BOTTOM-COLOR: #cfe3f9; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #cfe3f9; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BACKGROUND-COLOR: rgb(49, 49, 49); BORDER-RIGHT-COLOR: #cfe3f9; BORDER-BOTTOM-STYLE: solid"
+						align="center" bgColor="buttonface" colSpan="7" height="2">
+						<P style="FONT-WEIGHT: bold"><FONT color=white>Attendance Record for the Selected Month</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<select>
+							{% for i in month_year %}
+						<option value={{i.0}}>{{i.1}} </option>
+							{% endfor %}
+						</select>
+						</P>
+					</TD>
+				</TR>
+		
+		
+				<TR vAlign="top">
+						<TD style="HEIGHT: 10px" align="center" bgColor="#ffffff" colSpan="1">
+						  <P>
+								<table width = "30px" cellspacing="0" cellpadding="3" align="Center" rules="all" bordercolor="#CCCCCC" id="DataGrid1" style="background-color:White;border-color:#CCCCCC;border-width:1px;border-style:None;font-family:Arial;font-size:10pt;height:48px;width:100%;border-collapse:collapse;">
+									<tr align="center" valign="top" style="color:white;background-color:rgb(49, 49, 49);font-family:Arial;font-size:12pt;font-weight:bold;">
+										<td>Date</td>
+										<td>Day Of Week</td>
+										<td>Login Time</td>
+										<td>Logout Time</td>
+										<td>Status</td>
+									</tr>
+									{% for i in data %}
+									 <tr align="center" style="color:Teal;font-family:Arial;font-size:10pt;">
+										<td align="left">
+											<a id="id">{{i.0}}</a>
+										</td>
+										<td align="left">{{i.1}}</td>
+										
+										{% if time > i.2 %}
+										
+										<td align="center">{{i.2}}</td>
+										{% else %}
+										
+										<td align="center" style="color:red;font-family:Arial;font-size:10pt;">{{i.2}}</td>
+										{% endif %}
+										<td align="center">{{i.3}}</td>
+										<td align="center">working</td>
+									</tr>
+									{% endfor %}
+			
+								</table>
+							</P>
+						</TD>
+				</TR>
+					<TR>
+						<TD bgColor="#ffffff"><span id="Label3" style="color:Teal;font-size:10pt;font-style:italic;width:448px;"> Login time before 9:40 AM </span></TD>
+					</TR>
+					<TR>
+						<TD bgColor="#ffffff"><span id="Label2" style="color:SaddleBrown;font-size:10pt;font-style:italic;width:448px;"> Login time after 9:40 AM </span></TD>
+					</TR>
+					<TR>
+						<TD bgColor="#ffffff"><span id="Label4" style="color:Red;font-size:10pt;font-style:italic;width:448px;"> Login time after 9:50 AM </span></TD>
+					</TR>
+				</TABLE>
+		
+			<TABLE class="font10" id="Table5" style=" MARGIN-LEFT: 37px; WIDTH: 900PX" cellSpacing="0"
+				cellPadding="0" align="center">
+				<TR>
+					<TD colSpan="4"><STRONG>Leave Summary </STRONG>
+						<span id="lblUpdatedDate" style="color:rgb(49, 49, 49);font-size:XX-Small;">(as on )</span></TD>
+				</TR>
+				<TR>
+					<TD>Leaves Taken :
+						<span id="lblleave">{{leaves}}</span></TD>
+					<TD>Carry Forward:
+						<span id="lblCarry">0</span></TD>
+					<TD>Leaves Allocated :
+						<span id="lblallocat">1</span></TD>
+					
+				</TR>
+				<tr>
+				<TD>Leaves Compensate :
+						<span id="lblCompensate">0</span></TD>
+					<TD>Leaves In Hand:
+						<span id="lblpending">1</span></TD>
+				</tr>
+				
+			</TABLE>
+			<br>
+				<table id="leave" style="WIDTH: 900px; HEIGHT: 10px" bordercolor="#ffffff" cellspacing="2" cellpadding="1" width="560" align="center" border="0">
+			<tr valign="top">
+				<TD style="BORDER-LEFT-COLOR: #cfe3f9; BORDER-BOTTOM-COLOR: #cfe3f9; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #cfe3f9; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; HEIGHT: 4px; BACKGROUND-COLOR: rgb(49, 49, 49); BORDER-RIGHT-COLOR: #cfe3f9; BORDER-BOTTOM-STYLE: solid" align="center" bgcolor="#b0c4de" colspan="7" height="4">
+														<P><FONT face="Arial" color="#191984" size="2"><STRONG style="FONT-WEIGHT: bold;color:white;font-size:16px">Status 
+																	of&nbsp; Applied leave</STRONG></FONT></P>
+													</TD>
+			</tr>
+			<tr valign="top">
+				<TD style="HEIGHT: 65px" align="center" bgcolor="#ffffff">
+														<P>
+															<table cellspacing="0" cellpadding="3" align="Center" rules="all" bordercolor="#CCCCCC" id="DataGrid2" style="background-color:White;border-color:#CCCCCC;border-width:1px;border-style:None;font-family:Arial;font-size:10pt;height:18px;width:100%;border-collapse:collapse;">
+					<tr align="center" valign="top" style="color:White;background-color:rgb(49, 49, 49);font-family:Arial;font-size:12pt;font-weight:bold;">
+						<td align="center" style="width:25mm;">Applied date</td><td align="center">Reason for taking Leave</td><td align="center">Application Processing Date</td><td align="center">Status</td><td>For Date</td>
+					</tr><tr style="color:Firebrick;font-family:Arial;font-size:12pt;">
+						{% for i in leave %}
+						<tr align="center" style="color:Teal;font-family:Arial;font-size:10pt;">
+							<td  align="left">{{i.Applied_Date| date:"d F Y"}}</td>
+							<td align="center">{{i.Applied_Reason}}</td>
+							<td align="center">Application in processing</td>
+							<td align="center">{{i.leave_Granted_M}}</td>
+							<td align="center">{{i.leave_From}} to {{i.leave_To}} </td>
+						</tr>
+						{% endfor %}
+				
+			
+				</table>
+				{% if leave.has_other_pages %}
+				<ul class="pagination">
+				  {% if leave.has_previous %}
+				<li class="page-item"><a class="page-link" href="{% url 'home' %}?page={{ leave.previous_page_number }}">&laquo;</a></li>
+				  {% else %}
+				<li class="page-item disabled"><a class="page-link" href="#"><span>&laquo;</span></a></li>
+				  {% endif %}
+				 {% for i in leave.paginator.page_range %}
+				{% if leave.number == i %}
+				  <li class="page-item active"><a class="page-link" href="#"><span>{{ i }} <span class="sr-only">(current)</span></a></li>
+				  {% elif i > leave.number|add:'-3' and i < leave.number|add:'3' %}
+				  <li class="page-item"><a class="page-link" href="{% url 'home' %}?page={{ i }}">{{ i }}</a></li>
+				{% endif %}
+				  {% endfor %}
+				  {% if leave.has_next %}
+				<li class="page-item"><a class="page-link" href="{% url 'home' %}?page={{ leave.next_page_number }}">&raquo;</a></li>
+				  {% else %}
+				<li class="page-item disabled"><a class="page-link" href="#"><span>&raquo;</span></a></li>
+				  {% endif %}
+				</ul>
+				{% endif %}<table class="table table-bordered">
+		
+		
+		
+		<br>
+		{% if Att_adjust != None %}
+		<table id="Att_ad" style="WIDTH: 900px; HEIGHT: 10px" bordercolor="#ffffff" cellspacing="1" cellpadding="2" width="560" align="center" border="0">
+			<tr valign="top">
+				<TD style="BORDER-LEFT-COLOR: #cfe3f9; BORDER-BOTTOM-COLOR: #cfe3f9; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: #cfe3f9; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; HEIGHT: 4px; BACKGROUND-COLOR: rgb(49, 49, 49); BORDER-RIGHT-COLOR: #cfe3f9; BORDER-BOTTOM-STYLE: solid" align="center" bgcolor="#b0c4de" colspan="7" height="4">
+														<P><FONT face="Arial" color="white" size="2"><STRONG style="FONT-WEIGHT: bold">Status 
+																	of&nbsp; Attendance Adjustment Request</STRONG></FONT></P>
+													</TD>
+			</tr>
+			<tr valign="top">
+				<TD style="HEIGHT: 65px" align="center" bgcolor="#ffffff">
+							
+								
+									<table cellspacing="0" cellpadding="3" align="Center" rules="all" bordercolor="#CCCCCC" id="DataGrid2" style="background-color:White;border-color:#CCCCCC;border-width:1px;border-style:None;font-family:Arial;font-size:10pt;height:18px;width:100%;border-collapse:collapse;">
+										<tr align="center" valign="top" style="color:White;background-color:rgb(49, 49, 49);font-family:Arial;font-size:12pt;font-weight:bold;">
+											<td align="center" style="width:25mm;">Date</td>
+											<td align="center">Reason for Attendance Adjustment</td>
+											<td align="center">Status</td>
+											<td align="center">Granted By Manager</td>
+											<td>Day</td>
+										</tr>
+						<tr style="color:Firebrick;font-family:Arial;font-size:10pt;">
+					
+						{% for i in Att_ad %}
+						<tr align="center" style="color:Teal;font-family:Arial;font-size:10pt;">
+							<td align="left">{{i.0}}</td>
+							<td align="center">{{i.1}}</td>
+							<td align="center">{{i.2}}</td>
+							<td align="center">{{i.3}}</td>
+							<td align="center">{{i.4}} </td>
+						</tr>
+						{% endfor %}
+					
+					</TD>
+					</tr>
+				</table>
+					{% if Att_ad.has_other_pages %}
+					<ul class="pagination">
+					  {% if Att_ad.has_previous %}
+					<li class="page-item"><a class="page-link" href="{% url 'home' %}?page1={{Att_ad.previous_page_number}}">&laquo;</a></li>
+					{% else %}
+					<li class="page-item disabled"><a class="page-link" href="#"><span>&laquo;</span></a></li>
+					  {% endif %}
+					 {% for i in Att_ad.paginator.page_range %}
+					{% if Att_ad.number == i %}
+					  <li class="page-item active"><a class="page-link" href="#"><span>{{ i }} <span class="sr-only">(current)</span></a></li>
+					{% elif i > Att_ad.number|add:'-3' and i < Att_ad.number|add:'3' %}
+					  <li class="page-item"><a class="page-link" href="{% url 'home' %}?page1={{i}}">{{ i }}</a></li>
+					{% endif %}
+					  {% endfor %}
+					  {% if Att_ad.has_next %}
+					<li class="page-item"><a class="page-link" href="{% url 'home' %}?page1={{Att_ad.next_page_number}}">&raquo;</a></li>
+					  {% else %}
+					<li class="page-item disabled"><a class="page-link" href="#"><span>&raquo;</span></a></li>
+					  {% endif %}
+					</ul>
+					{% endif %}<table class="table table-bordered">
+				{% endif %}
+			</table>		
+		{% endblock %}</html>

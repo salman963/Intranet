@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	{% load static %}
+<head>
+<meta charset="utf-8">
+<title>Neuronimbus Intranet</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" type="text/css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<meta charset="utf-8">
+<title>Neuronimbus Intranet</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body bgColor="#ffffff" leftMargin="0" topMargin="0" MS_POSITIONING="GridLayout">
+		
+
+
+			<TABLE id="Table1" cellSpacing="0" cellPadding="0" width="778" align="left" border="0">
+				<TR>
+					<TD vAlign="top" height="80">
+						<TABLE id="Table2" cellSpacing="0" cellPadding="0" width="100%" border="0">
+							<TR vAlign="top">
+								<TD width="82"><IMG height="80" src="{% static 'images/img_01.gif' %}" width="82"></TD>
+								<TD width="188"><IMG height="80" src="{% static 'images/img_02.gif' %}" width="188"></TD>
+								<TD width="225"><IMG height="80" src="{% static 'images/img_03.gif' %}" width="225"></TD>
+								<TD><IMG height="80" src="{% static 'images/img_04.gif' %}" width="283"></TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" align="right" height="12">
+						<TABLE id="Table3" cellSpacing="0" cellPadding="0" width="100%" border="0">
+							<TR vAlign="top">
+								<TD class="hght12" width="22" bgColor="#1964af"><IMG height="12" src="{% static 'images/img_05.gif' %}"width="22"></TD>
+								<TD class="hght12" bgColor="#ffffff"><IMG height="12" src="{% static 'images/img_06.gif' %}" width="1"></TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" height="25">
+						<TABLE id="Table4" cellSpacing="0" cellPadding="0" width="100%" border="0">
+							<TR vAlign="top">
+								<TD width="22"><IMG height="25" src="{% static 'images/img_08.gif' %}"g_0 width="22"></TD>
+								<TD width="165"><IMG height="25" src="{% static 'images/img_09.gif' %}" width="165"></TD>
+								<TD width="240"><IMG height="25" src="{% static 'images/img_10.gif' %}" width="240"></TD>
+								<TD background="{% static 'images/img_11.gif' %}"><IMG height="25" src="{% static 'images/img_11.gif' %}" width="1"></TD>
+								<TD width="30"><IMG height="25" src="{% static 'images/img_12.gif' %}" width="30"></TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR bgColor="#d5ebf8">
+					<TD vAlign="top" width="100%">
+						<TABLE cellSpacing="0" cellPadding="0" width="100%" border="0">
+							<TR vAlign="top">
+								<TD width="22"><IMG src="{% static 'images/img_13.gif' %}" width="22"></TD>
+								<TD style="BACKGROUND-IMAGE:" width="165"><IMG src="{% static 'images/img_14.gif' %}" width="165"></TD>
+								<TD vAlign="top" align="center" bgColor="#ffffff">
+									<TABLE id="Table6" cellSpacing="0" cellPadding="0" width="100%" border="0">
+										<TR vAlign="top">
+											<TD class="months" vAlign="top" align="left"><span id="Welcome1_Label1" style="color:#FF8000;font-family:Arial;font-size:9pt;font-weight:bold;">&nbsp;Welcome&nbsp;</span><span id="Welcome1_welcom" style="color:DimGray;font-family:Arial;font-size:9pt;font-weight:bold;">{% block name%}{% endblock%}</span></TD>
+											<TD class="attendance" vAlign="top" align="right"><span id="Date11_date_" style="color:#191984;font-family:Arial;font-size:9pt;font-weight:bold;width:80px;">07 Jan 2020</span></TD>
+										</TR>
+									</TABLE>
+								</TD>
+								<TD width="30" bgColor="#ffffff"><IMG src="{% static 'images/img_16.gif' %}"></TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" height="11">
+						<TABLE id="Table7" cellSpacing="0" cellPadding="0" width="100%" border="0">
+							<TR vAlign="top">
+								<TD width="22"><IMG height="11" src="{% static 'images/img_17.gif' %}" width="22"></TD>
+								<TD style="BACKGROUND-IMAGE: url(images/img_18.gif)" width="165"><IMG height="11" src="{% static 'images/img_18.gif' %}" width="165"></TD>
+								<TD background="{% static 'images/img_19.gif' %}"><IMG height="11" src="{% static 'images/img_19.gif' %}" width="1"></TD>
+								<TD width="30" bgColor="#ffffff"><IMG height="11" src="{% static 'images/img_20.gif' %}" width="30"></TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR>
+					<TD vAlign="top" height="251">
+						<TABLE id="Table8" cellSpacing="0" cellPadding="0" width="100%" border="0">
+							<tbody><tr valign="top">
+								<td width="22" bgcolor="#c3e6f9">&nbsp;</td>
+								<td width="165" background="{% static 'images/img_31.gif' %}">
+									<table id="Table9" width="100%" cellspacing="0" cellpadding="0" border="0">
+										<tbody><tr>
+											<TD vAlign="top" height="18">
+<P>
+	<TABLE id="Table3" style="WIDTH: 88px; HEIGHT: 152px" cellSpacing="0" cellPadding="0" width="88"
+		border="0">
+		<TR>
+			<TD style="HEIGHT: 7px"><a href="{% url 'home' %}"><img src="{% static 'images/homebtn.gif' %}" alt=""></a>
+			</TD>
+		</TR>
+		
+		<TR>
+			<TD style="HEIGHT: 7px"><a href="{% url 'profile1:profile' %}"><img src="{% static 'images/viewbtn.gif' %}" alt=""></a>
+			</TD>
+		</TR>
+		<TR>
+			<TD><a href="{% url 'leave:leave2' %}"><img src="{% static 'images/applyforleavebtn.gif' %}" alt=""></a>
+			</TD>
+		</TR>
+		<tr>
+			<td style="HEIGHT: 7px"><a href="{% url 'leave_approve:leave_approve1' %}"><img src="{% static 'images/surveybtn.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		<TR>
+			<TD><a href="{% url 'Attendance:Att' %}"><img src="{% static 'images/modify-atteance.gif' %}" alt=""></a>
+			</TD>
+		</TR>
+		<TR>
+			<TD><a href="{% url 'Att_approve:Att_approve1' %}"><img src="{% static 'images/modify-atteance.gif' %}" alt=""></a>
+			</TD>
+		</TR>
+		<TR>
+			<TD><a href="{% url 'holiday_list' %}"><img src="{% static 'images/holidaysbtn.gif' %}" alt=""></a>
+			</TD>
+		</TR>
+		<TR>
+			<TD><a href="{% url 'change_password:change_pass' %}"><img src="{% static 'images/changepasswordbtn.gif' %}" alt=""></a>
+			</TD>
+		</TR>
+		<tr>
+			<td><a href="{% static 'HR_Policy.pdf' %}"><img src="{% static 'images/hrpolicy.gif' %}" alt=""></a>				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<a href="{% static 'Recruitment Process.pdf' %}"><img src="{% static 'images/recruitment.gif' %}" alt=""></a>
+			</td>
+		</tr>
+		<TR>
+			<TD><a href="{% url 'logout' %}"><img src="{% static 'images/logoutbtn.gif' %}" alt=""></a>
+			</TD>
+		</TR>
+		<TR>
+			<TD>
+				<img src="{% static 'images/img_30.gif' %}" alt="">
+			</TD>
+		</TR>
+	</TABLE>
+</P>
+</TD>
+</TR>
+</TABLE>
+</TD>
+				<TD bgColor="#ffffff">
+				{% block new %}
+
+
+				{% endblock %}
+
+				</TD>
+				<TD width="14" background="{% static 'images/img_24.gif' %}">&nbsp;</TD>
+			</TR>
+		</TABLE>
+		</TD>
+</TR>
+<TR>
+	<TD vAlign="top" height="37">
+		<TABLE id="Table12" cellSpacing="0" cellPadding="0" width="100%" border="0">
+			<TR vAlign="top">
+				<TD width="82"><IMG height="37" src="{% static 'images/img_32.gif' %}" width="82"></TD>
+				<TD width="105"><IMG height="37" src="{% static 'images/img_33.gif' %}" width="105"></TD>
+				<TD background="{% static 'images/img_34.gif' %}">&nbsp;</TD>
+				<TD width="30"><IMG height="37" src="{% static 'images/img_35.gif' %}" width="30"></TD>
+			</TR>
+		</TABLE>
+	</TD>
+</TR>
+</TABLE>
+			
+	
+
+	</body>
+</html>
